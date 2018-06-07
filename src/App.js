@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {addGL, removeGL, addGLAsync} from './index.redux'
+import {addGL, removeGL, addGLAsync} from './store/index.redux'
 import YiYing from './yiying'
 
 @connect(
