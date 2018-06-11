@@ -1,16 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {addGL, removeGL, addGLAsync} from './store/index.redux'
-import YiYing from './yiying'
+import {addGL, removeGL, addGLAsync} from '../store/index.redux'
+import YiYing from '../yiying'
 
 @connect(
     //属性
-    state => ({num: state}),
+    state => ({num: state.counter}),
     //方法,自动添加到props,dispapatch
     {addGL, removeGL, addGLAsync}
 )
 
 class App extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -20,9 +21,6 @@ class App extends React.Component {
 
     render() {
         let yingzhang = '张大毛';
-        const addGL = this.props.addGL;
-        const removeGL = this.props.removeGL;
-        const addGLAsync = this.props.addGLAsync;
         const num = this.props.num;
         return (
             <div>

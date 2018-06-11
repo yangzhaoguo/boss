@@ -16,13 +16,13 @@ class yiying extends React.Component {
         })
     }
 
-    componentWillMount() {
-        console.log('组件加载前')
-    }
-
-    componentDidMount() {
-        console.log('组件加载完成')
-    }
+    // componentWillMount() {
+    //     console.log('组件加载前')
+    // }
+    //
+    // componentDidMount() {
+    //     console.log('组件加载完成')
+    // }
 
     render() {
         return (
