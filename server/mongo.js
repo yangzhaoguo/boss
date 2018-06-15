@@ -16,7 +16,7 @@ const models = {
         'avatar': {type: String},
         'desc': {type: String},
         'title': {type: String},
-        //boos
+        //boss
         'company': {type: String},
         'money': {type: String},
     },

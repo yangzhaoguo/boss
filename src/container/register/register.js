@@ -2,7 +2,9 @@ import React from 'react'
 import Logo from '../../component/logo/logo'
 import {List, InputItem, WingBlank, WhiteSpace, Button, Radio} from 'antd-mobile'
 import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom'
 import {register} from '../../redux/user.redux'
+import './index.css'
 
 @connect(
     state => state.user,
@@ -13,32 +15,35 @@ class Register extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: "",
-            pwd: "",
-            repeatpwd: "",
-            type: 'genius'  // or boos
+            postData: {
+                user: "",
+                pwd: "",
+                repeatpwd: "",
+                type: 'genius'  // or boss
+            }
         };
         this.handleRegister = this.handleRegister.bind(this)
     }
 
     handleChange(key, val) {
+        let data = Object.assign({}, this.state.postData, {[key]: val});
         this.setState({
-            [key]: val
+            postData: data
         })
     }
 
     handleRegister() {
-        this.props.register(this.state)
+        this.props.register(this.state.postData);
     }
 
     render() {
         const RadioItem = Radio.RadioItem;
         return (
             <div>
+                {this.props.redirectTo ? <Redirect to={this.props.redirectTo}/> : null}
                 <Logo></Logo>
                 <WingBlank>
                     <List>
-                        {this.props.msg ? <p>{this.props.msg}</p> : null}
                         <InputItem
                             onChange={v => {
                                 this.handleChange('user', v)
@@ -64,17 +69,18 @@ class Register extends React.Component {
                             onChange={() => {
                                 this.handleChange('type', 'genius')
                             }}
-                            checked={this.state.type === 'genius'}>
+                            checked={this.state.postData.type === 'genius'}>
                             牛人
                         </RadioItem>
                         <RadioItem
                             onChange={() => {
-                                this.handleChange('type', 'boos')
+                                this.handleChange('type', 'boss')
                             }}
-                            checked={this.state.type === 'boos'}>
-                            BOOS
+                            checked={this.state.postData.type === 'boss'}>
+                            BOSS
                         </RadioItem>
                     </List>
+                    {this.props.msg ? <p className="warn">{this.props.msg}</p> : null}
                     <WhiteSpace/>
                     <Button type='primary' onClick={this.handleRegister}>注册</Button>
                 </WingBlank>
