@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e9942e0-2363-4239-9fd8-daa36f7c8db4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/boy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/bull.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/chick.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/crab.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/girl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/hedgehog.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/hippopotamus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/koala.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/lemur.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/man.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/pig.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/tiger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/whale.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/woman.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/img/zebra.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/avatar-selector/avatar-selector.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/bossInfo/bossInfo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/geniusinfo/geniusinfo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/login/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/register/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/util.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/mongo.js" afterPath="$PROJECT_DIR$/server/mongo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/user.js" afterPath="$PROJECT_DIR$/server/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/authRouter/authrouter.js" afterPath="$PROJECT_DIR$/src/component/authRouter/authrouter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/logo/logo.css" afterPath="$PROJECT_DIR$/src/component/logo/logo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/container/login/login.js" afterPath="$PROJECT_DIR$/src/container/login/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/container/register/register.js" afterPath="$PROJECT_DIR$/src/container/register/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/user.redux.js" afterPath="$PROJECT_DIR$/src/redux/user.redux.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -59,7 +29,7 @@
       <file leaf-file-name="bossInfo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/container/bossInfo/bossInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
+            <state relative-caret-position="570">
               <caret line="35" column="46" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="23" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -71,7 +41,7 @@
       <file leaf-file-name="user.redux.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/redux/user.redux.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
+            <state relative-caret-position="361">
               <caret line="20" column="81" lean-forward="false" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="81" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -84,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/src/util.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="57">
-              <caret line="3" column="21" lean-forward="true" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+              <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -103,9 +73,8 @@
       <file leaf-file-name="geniusinfo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/container/geniusinfo/geniusinfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-              <caret line="71" column="29" lean-forward="true" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+            <state relative-caret-position="1235">
+              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -136,7 +105,7 @@
       <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/container/login/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
+            <state relative-caret-position="722">
               <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="26" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -148,7 +117,7 @@
       <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="703">
               <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
               <folding />
             </state>
@@ -265,7 +234,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -319,6 +287,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -375,7 +344,8 @@
       <workItem from="1528770280949" duration="16925000" />
       <workItem from="1528871168601" duration="9185000" />
       <workItem from="1528936875379" duration="20005000" />
-      <workItem from="1529040312828" duration="7199000" />
+      <workItem from="1529040312828" duration="7259000" />
+      <workItem from="1529394002301" duration="43000" />
     </task>
     <task id="LOCAL-00001" summary="install react-router-dom">
       <created>1528349458806</created>
@@ -398,11 +368,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528792081511</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="注册6.10">
+      <created>1529056811411</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1529056811411</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84213000" />
+    <option name="totallyTimeSpent" value="84316000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -498,7 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-211547">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -625,9 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -635,7 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -655,9 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1748">
           <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
-          <folding>
-            <element signature="e#2847#2893#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -665,7 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -679,7 +647,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="703">
           <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
           <folding />
         </state>
@@ -687,7 +655,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/user.redux.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
+        <state relative-caret-position="361">
           <caret line="20" column="81" lean-forward="false" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="81" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
@@ -706,7 +674,7 @@
     <entry file="file://$PROJECT_DIR$/src/util.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
-          <caret line="3" column="21" lean-forward="true" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -721,7 +689,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/container/bossInfo/bossInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
+        <state relative-caret-position="570">
           <caret line="35" column="46" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="23" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
@@ -739,7 +707,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/container/login/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
+        <state relative-caret-position="722">
           <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="26" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
@@ -749,9 +717,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/container/geniusinfo/geniusinfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <caret line="71" column="29" lean-forward="true" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+        <state relative-caret-position="1235">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
