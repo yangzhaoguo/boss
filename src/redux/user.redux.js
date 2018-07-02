@@ -11,7 +11,6 @@ const initState = {
     user: '',
     pwd: '',
     type: '',
-    redirectTo: ''
 }
 
 
@@ -29,8 +28,8 @@ export function user(state = initState, action) {
     }
 }
 
-function authSuccess(data) {
-    console.log(data)
+function authSuccess(obj) {
+    const {pwd,...data} = obj;
     return {
         type: AUTH_SUCCESS,
         payload: data

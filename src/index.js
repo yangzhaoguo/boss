@@ -10,7 +10,9 @@ import reducers from './redux/reducers.redux'
 import AuthRoute from './component/authRouter/authrouter'
 import BossInof from './container/bossInfo/bossInfo'
 import Geniusinfo from './container/geniusinfo/geniusinfo'
+import Dashboard from './component/dashboard/dashboard'
 import './config'
+import './index.css'
 
 const store = createStore(reducers, compose(
     applyMiddleware(thunk),
@@ -22,10 +24,13 @@ ReactDOM.render(
         <BrowserRouter>
             <div>
                 <AuthRoute></AuthRoute>
-                <Route path='/login' component={Login}></Route>
-                <Route path='/register' component={Register}></Route>
-                <Route path='/bossinfo' component={BossInof}></Route>
-                <Route path='/geniusinfo' component={Geniusinfo}></Route>
+                <Switch>
+                    <Route path='/login' component={Login}></Route>
+                    <Route path='/register' component={Register}></Route>
+                    <Route path='/bossinfo' component={BossInof}></Route>
+                    <Route path='/geniusinfo' component={Geniusinfo}></Route>
+                    <Route component={Dashboard}></Route>
+                </Switch>
             </div>
         </BrowserRouter>
     </Provider>), document.getElementById('root')

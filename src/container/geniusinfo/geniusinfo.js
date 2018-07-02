@@ -9,15 +9,12 @@ import {Redirect} from 'react-router-dom'
     state => state.user,
     {updata}
 )
-class GeniusinfoInfo extends React.Component {
+class GeniusInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             title: '',
-            company: '',
-            money: '',
             desc: '',
-            avatar: ''
         }
     }
 
@@ -29,12 +26,12 @@ class GeniusinfoInfo extends React.Component {
 
     render() {
         const path = this.props.location.pathname;
-        const redirect = this.props.redirectTo
+        const redirect = this.props.redirectTo;
 
         return (
             <div>
                 {redirect && path !== redirect ? <Redirect to={this.props.redirectTo}/> : null}
-                <NavBar mode='dark'>BOSS信息完善</NavBar>
+                <NavBar mode='dark'>牛人信息完善</NavBar>
                 <AvatarSelector
                     selectAvater={(imgname) => {
                         this.setState({
@@ -44,17 +41,12 @@ class GeniusinfoInfo extends React.Component {
                 />
                 <InputItem
                     onChange={(v) => this.onChange('title', v)}
-                >招聘职位</InputItem>
-                <InputItem
-                    onChange={(v) => this.onChange('company', v)}
-                >公司名称</InputItem>
-                <InputItem
-                    onChange={(v) => this.onChange('money', v)}
-                >职位薪资</InputItem>
+                >求职岗位</InputItem>
+
                 <TextareaItem
                     rows={3}
                     autoHeight
-                    title='职位要求'
+                    title='个人简介'
                     onChange={(v) => this.onChange('desc', v)}
                 />
                 <WhiteSpace></WhiteSpace>
@@ -62,11 +54,12 @@ class GeniusinfoInfo extends React.Component {
                     onClick={() => {
                         this.props.updata(this.state)
                     }}
-                    type='primary'>保存</Button>
-
+                    type='primary'>
+                    保存
+                </Button>
             </div>
         )
     }
 }
 
-export default GeniusinfoInfo
+export default GeniusInfo
