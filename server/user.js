@@ -20,11 +20,13 @@ Router.get('/list', function (req, res) {
 });
 
 Router.get('/getmsglist', function (req, res) {
-    const user = req.cookies.user
-    Chat.find({'$or': [{from: user, to: user}]}, function (err, doc) {
+    const user = req.cookies.user;
+    // Chat.remove({}, function () {})
+    Chat.find({}, function (err, doc) {
         if (err) {
             return res.json({code: 1, msg: '后端出错了'})
         } else {
+            console.log(doc)
             return res.json({code: 0, data: doc})
         }
     })

@@ -1,20 +1,20 @@
 import React from 'react'
 import io from 'socket.io-client'
-import {List, InputItem} from 'antd-mobile'
+import {List, InputItem, NavBar} from 'antd-mobile'
 import {connect} from 'react-redux'
-import {getMsgList, sendMsg} from "../../redux/chat.redux";
+import {getMsgList, sendMsg, recvMsg} from "../../redux/chat.redux";
 
 const socket = io('ws://localhost:9093');
 
 @connect(
     state => state,
-    {getMsgList, sendMsg}
+    {getMsgList, sendMsg, recvMsg}
 )
 
 
 class Chat extends React.Component {
     constructor(p) {
-        super(p)
+        super(p);
         this.state = {
             text: '',
             msg: []
@@ -22,27 +22,35 @@ class Chat extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getMsgList()
-        // socket.on('recvmsg', (data) => {
-        //     this.setState({
-        //         msg: [...this.state.msg, data.text]
-        //     })
-        // })
+        this.props.getMsgList();
+        this.props.recvMsg()
     }
 
     handleSubmit() {
         const from = this.props.user._id;
         const to = this.props.match.params.user;
         const msg = this.state.text;
-        this.props.sendMsg({from, to, msg})
+        if (this.state.text === '') {
+            return false
+        }
+        console.log({from, to, msg});
+        this.props.sendMsg({from, to, msg});
         this.setState({text: ''})
     }
 
     render() {
+        const user = this.props.match.params.user;
         return (
-            <div>
-                {this.state.msg.map((v, i) => {
-                    return <p key={i}>{v}</p>
+            <div id='chat-page'>
+                <NavBar mode='dark'>
+                    {user}
+                </NavBar>
+                {this.props.chat.chatmsg.map((v) => {
+                    return v.from == user ? (
+                        <p key={v._id}>对方发送的：{v.content}</p>
+                    ) : (
+                        <p key={v._id}>我发送的：{v.content}</p>
+                    )
                 })}
                 <div className='stick-footer'>
                     <List>

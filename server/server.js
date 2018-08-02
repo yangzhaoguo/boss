@@ -5,14 +5,16 @@ const cookieParser = require('cookie-parser');
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const userRouter = require('./user');
+const models = require('./mongo');
+const Chat = models.getModel('chat');
 
 io.on('connection', function (socket) {
     socket.on('sendmsg', function (data) {
-        io.emit('recvmsg', data)
         const {from, to, msg} = data
         const chatid = [from, to].sort().join('_')
+        console.log(data)
         Chat.create({chatid, from, to, content: msg}, function (err, doc) {
-            io.emit('recvmsg', Object.assign({}, d._doc))
+            io.emit('recvmsg', Object.assign({}, doc._doc))
         })
     })
 })
