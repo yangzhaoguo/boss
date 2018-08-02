@@ -1,21 +1,34 @@
 const express = require('express');
-const utils = require('utility')
+const utils = require('utility');
 const Router = express.Router();
 const models = require('./mongo');
 const User = models.getModel('user');
-
+const Chat = models.getModel('chat');
 const _filter = {pwd: 0, __v: 0};
 
 Router.get('/list', function (req, res) {
     // User.remove({},function(){})
-    User.find({}, function (err, doc) {
+    const {type} = req.query;
+
+    User.find({type}, function (err, doc) {
         if (err) {
             return res.json({code: 1, msg: '后端出错了'})
         } else {
-            return res.json({code: 1, doc: doc})
+            return res.json({code: 0, data: doc})
         }
     })
 });
+
+Router.get('/getmsglist', function (req, res) {
+    const user = req.cookies.user
+    Chat.find({'$or': [{from: user, to: user}]}, function (err, doc) {
+        if (err) {
+            return res.json({code: 1, msg: '后端出错了'})
+        } else {
+            return res.json({code: 0, data: doc})
+        }
+    })
+})
 
 Router.post('/register', function (req, res) {
     const {user, pwd, type} = req.body;

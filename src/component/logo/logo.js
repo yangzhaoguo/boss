@@ -1,16 +1,15 @@
 import React from 'react'
-import logImg from './logo.png'
+import logoImg from './job.png'
 import './logo.css'
+class Logo extends React.Component{
 
-class Logo extends React.Component {
-    render() {
-        return (
-            <div className='logo-continer'>
-                <img src={logImg} alt=""/>
-            </div>
-        )
-    }
-
+	render(){
+		return (
+			<div className="logo-container">
+				<img src={logoImg} alt=""/>
+			</div>
+		)
+	}
 }
 
 export default Logo
