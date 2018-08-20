@@ -1,10 +1,8 @@
 import React from 'react'
-import io from 'socket.io-client'
-import {List, InputItem, NavBar} from 'antd-mobile'
+import {List, InputItem, NavBar, Icon} from 'antd-mobile'
 import {connect} from 'react-redux'
 import {getMsgList, sendMsg, recvMsg} from "../../redux/chat.redux";
-
-const socket = io('ws://localhost:9093');
+import {getChatId} from "../../util";
 
 @connect(
     state => state,
@@ -22,8 +20,10 @@ class Chat extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getMsgList();
-        this.props.recvMsg()
+        if (!this.props.chat.chatmsg.length) {
+            this.props.getMsgList();
+            this.props.recvMsg()
+        }
     }
 
     handleSubmit() {
@@ -39,17 +39,40 @@ class Chat extends React.Component {
     }
 
     render() {
-        const user = this.props.match.params.user;
+        const userId = this.props.match.params.user;
+        const Item = List.Item;
+        const users = this.props.chat.users;
+        if (!users[userId]) {
+            return null
+        }
+        const chatid = getChatId(userId, this.props.user._id);
+        const chatmsgs = this.props.chat.chatmsg.filter(v => v.chatid === chatid);
+
         return (
             <div id='chat-page'>
-                <NavBar mode='dark'>
-                    {user}
+                <NavBar
+                    mode='dark'
+                    icon={<Icon type="left"/>}
+                    onLeftClick={() => {
+                        this.props.history.goBack()
+                    }}
+                >
+                    {users[userId].name}
                 </NavBar>
-                {this.props.chat.chatmsg.map((v) => {
-                    return v.from == user ? (
-                        <p key={v._id}>对方发送的：{v.content}</p>
+                {chatmsgs.map((v) => {
+                    const avatar = require(`../img/${users[v.from].avatar}.png`);
+                    return v.from === userId ? (
+                        <List key={v._id}>
+                            <Item
+                                thumb={avatar}
+                            >{v.content}</Item>
+                        </List>
                     ) : (
-                        <p key={v._id}>我发送的：{v.content}</p>
+                        <List key={v._id}>
+                            <Item
+                                extra={<img src={avatar} alt=""/>}
+                                className='chat-me'>{v.content}</Item>
+                        </List>
                     )
                 })}
                 <div className='stick-footer'>
