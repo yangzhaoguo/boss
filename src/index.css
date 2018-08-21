@@ -30,6 +30,10 @@
     text-align: right;
 }
 
+#chat-list .am-badge-not-a-wrapper .am-badge-text{
+    margin-top: -5px;
+}
+
 .stick-footer {
     z-index: 10;
     position: fixed;

@@ -1,12 +1,12 @@
 import React from 'react'
 import {List, InputItem, NavBar, Icon} from 'antd-mobile'
 import {connect} from 'react-redux'
-import {getMsgList, sendMsg, recvMsg} from "../../redux/chat.redux";
+import {getMsgList, sendMsg, recvMsg, readMsg} from "../../redux/chat.redux";
 import {getChatId} from "../../util";
 
 @connect(
     state => state,
-    {getMsgList, sendMsg, recvMsg}
+    {getMsgList, sendMsg, recvMsg, readMsg}
 )
 
 
@@ -22,8 +22,13 @@ class Chat extends React.Component {
     componentDidMount() {
         if (!this.props.chat.chatmsg.length) {
             this.props.getMsgList();
-            this.props.recvMsg()
+            this.props.recvMsg();
         }
+    }
+
+    componentWillUnmount() {
+        const to = this.props.match.params.user;
+        this.props.readMsg(to)
     }
 
     handleSubmit() {
@@ -33,7 +38,6 @@ class Chat extends React.Component {
         if (this.state.text === '') {
             return false
         }
-        console.log({from, to, msg});
         this.props.sendMsg({from, to, msg});
         this.setState({text: ''})
     }

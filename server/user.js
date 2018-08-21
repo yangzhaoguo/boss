@@ -26,18 +26,16 @@ Router.get('/getmsglist', function (req, res) {
         let users = {};
         doc.forEach(v => {
             users[v._id] = {name: v.user, avatar: v.avatar}
-        })
+        });
         Chat.find({'$or': [{from: user}, {to: user}]}, function (err, doc) {
             if (err) {
                 return res.json({code: 1, msg: '后端出错了'})
             } else {
-                console.log(doc)
                 return res.json({code: 0, msg: doc, users: users})
             }
         })
     });
-
-})
+});
 
 Router.post('/register', function (req, res) {
     const {user, pwd, type} = req.body;
@@ -53,6 +51,19 @@ Router.post('/register', function (req, res) {
             res.cookie('userid', _id);
             return res.json({code: 0, data: {user, type, _id}})
         })
+
+    })
+});
+
+Router.post('/readmsg', function (req, res) {
+    const userid = req.cookies.userid
+    const {from} = req.body;
+    Chat.update({from, to: userid}, {'$set': {read: true}}, {'multi': true}, function (err, doc) {
+        console.log(doc);
+        if (!err) {
+            return res.json({code: 0, num: doc.nModified})
+        }
+        return res.json({code: 1, msg: '修改失败'})
     })
 });
 
@@ -97,7 +108,6 @@ Router.post('/update', function (req, res) {
         return res.json({code: 0, data})
     })
 });
-
 
 function md5Pwd(pwd) {
     const salt = 'uihoj-*1sdfr//123asdzz!Q@W#E$%^&*(asd';

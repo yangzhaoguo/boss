@@ -124,5 +124,6 @@
     "antd-mobile": "^2.1.11",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "redux-devtools-extension": "^2.13.2"
-  }
+  },
+  "homepage": "http://myname.github.io/myapp"
 }
