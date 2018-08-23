@@ -10,7 +10,7 @@ class Msg extends React.Component {
     getList(arr) {
         return arr[arr.length - 1]
     }
-
+ 
     render() {
         if (!this.props.chat.chatmsg.length) {
             return (
